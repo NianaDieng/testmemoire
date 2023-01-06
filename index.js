@@ -50,7 +50,7 @@ app.post("/api/articles",(req,res)=>{
    const article={title,author,description,contenue}
    const sql ='INSERT INTO article(title,author,description,contenue) VALUES (?,?,?,?)'
    const params=[article.title,article.author,article.description,article.contenue]
-   db.run(sql,params,function(err,reslut){
+   db.run(sql,params,function(err,reslut){  
     if(err){
         res.status(400).json({error:err.message})
         return
